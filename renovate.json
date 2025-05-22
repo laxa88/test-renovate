@@ -1,0 +1,15 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "postUpgradeTasks": {
+        "commands": ["pnpm install"],
+        "fileFilters": ["package.json"]
+      }
+    }
+  ],
+  "binarySource": "install",
+  "enabledManagers": ["npm"],
+  "dependencyDashboard": true
+}
