@@ -31,4 +31,4 @@ jobs:
         env:
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
           RENOVATE_CONFIG_FILE: renovate.json
-        run: renovate
+        run: renovate $GITHUB_REPOSITORY
