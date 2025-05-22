@@ -1,0 +1,34 @@
+name: Self-hosted Renovate
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # Run daily at 3am
+  workflow_dispatch:       # Allow manual trigger
+
+jobs:
+  renovate:
+    name: Run Renovate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install Renovate
+        run: npm install -g renovate
+
+      - name: Run Renovate
+        env:
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          RENOVATE_CONFIG_FILE: renovate.json
+        run: renovate
