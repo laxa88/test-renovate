@@ -5,6 +5,7 @@
       "matchManagers": ["npm"],
       "postUpgradeTasks": {
         "commands": ["pnpm install"],
+        "fileFilters": ["package.json"]
       }
     }
   ],
