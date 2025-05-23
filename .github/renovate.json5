@@ -11,6 +11,7 @@
         commands: [
           'pnpm install',
         ],
+        fileFilters: ['package.json'],
       },
     },
   ],
