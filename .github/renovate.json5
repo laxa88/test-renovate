@@ -1,13 +1,21 @@
 {
-  "extends": ["config:base"],
-  "packageRules": [
-    {
-      "matchManagers": ["npm"],
-      "postUpgradeTasks": {
-        "commands": ["pnpm install"],
-      }
-    }
+  extends: [
+    'config:recommended',
   ],
-  "enabledManagers": ["npm"],
-  "dependencyDashboard": true
+  packageRules: [
+    {
+      matchManagers: [
+        'npm',
+      ],
+      postUpgradeTasks: {
+        commands: [
+          'pnpm install',
+        ],
+      },
+    },
+  ],
+  enabledManagers: [
+    'npm',
+  ],
+  dependencyDashboard: true,
 }
