@@ -9,7 +9,6 @@
       }
     }
   ],
-  "binarySource": "install",
   "enabledManagers": ["npm"],
   "dependencyDashboard": true
 }
