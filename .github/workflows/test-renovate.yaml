@@ -1,8 +1,8 @@
 name: Self-hosted Renovate
 
 on:
-  schedule:
-    - cron: '0 3 * * *'  # Run daily at 3am
+  # schedule:
+    # - cron: '0 3 * * *'  # Run daily at 3am
   workflow_dispatch:       # Allow manual trigger
 
 jobs:
